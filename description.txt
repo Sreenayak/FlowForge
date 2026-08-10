@@ -1,151 +1,211 @@
 # Enterprise Project Management & Team Collaboration
 
-## Brief Project Plan
+## 1. Project Overview
 
-### 1. Project Overview
+**Enterprise Project Management & Team Collaboration** is a unified platform designed to help teams manage and build products from a single workspace.
 
-**Enterprise Project Management & Team Collaboration** is a unified platform designed to bring project management, team collaboration, communication, documentation, file management, meetings, client interaction, analytics, and AI-powered capabilities into one environment.
+Instead of using separate platforms for project management, communication, documentation, file management, meetings, and analytics, the platform brings these workflows together.
 
-Currently, software teams often depend on multiple platforms for different activities. Project management, development, communication, documentation, file storage, meetings, and reporting may all happen in separate systems. This creates context switching, scattered information, duplicated work, and communication gaps.
+### Vision
 
-Our platform aims to provide a **single collaborative workspace for the complete product-development lifecycle**.
+> **Build, manage, communicate, document, deliver, and monitor a product from one collaborative workspace.**
 
----
-
-### 2. Problem We Are Solving
-
-The main problem is **fragmentation**.
-
-A development team may need to:
-
-* Manage projects in one platform
-* Communicate in another
-* Store documentation somewhere else
-* Manage files separately
-* Conduct meetings through another service
-* Track development and performance using additional tools
-
-Because these activities are disconnected, maintaining complete project context becomes difficult.
-
-Our platform aims to connect these activities so that teams can work together without constantly moving between different applications.
-
-The hackathon problem statement identifies this same fragmentation as a source of context switching, duplicate work, poor visibility, and inefficient collaboration.
+The platform is designed to reduce context switching, keep project information connected, and make collaboration between developers, managers, and clients more efficient.
 
 ---
 
-### 3. Target Users
+## 2. Problem & Solution
+
+### The Problem
+
+Modern development teams often use different tools for different parts of the product lifecycle:
+
+| Activity           | Typical Situation |
+| ------------------ | ----------------- |
+| Project Management | Separate platform |
+| Development        | Separate platform |
+| Communication      | Separate platform |
+| Documentation      | Separate platform |
+| File Management    | Separate platform |
+| Meetings           | Separate platform |
+| Analytics          | Separate platform |
+
+This fragmentation can lead to:
+
+* Context switching
+* Scattered information
+* Duplicate work
+* Communication gaps
+* Poor project visibility
+* Difficulty maintaining complete project context
+
+### Our Solution
+
+Create a **unified product-development workspace** where teams can manage the major activities involved in building a product without constantly switching between disconnected applications.
+
+---
+
+## 3. Target Users
 
 The primary users are:
 
-* **Software development teams**
-* **Startups and small companies**
-* **Freelancers and small project teams**
+* **Software Development Teams**
+* **Startups & Small Companies**
+* **Freelancers & Small Project Teams**
 
-These users commonly work directly on building products and solving real-world problems. The platform is intended to make their collaboration and product-development workflow more organized and efficient.
-
----
-
-### 4. Main Concept
-
-The central idea is:
-
-> **Build the product, manage the project, communicate with the team, maintain documentation, interact with clients, and track progress from one unified workspace.**
-
-Instead of switching between multiple applications, the team should be able to maintain the majority of its project context within the same platform.
-
-The platform is therefore intended to become a **central source of project information and collaboration**.
+The platform focuses on people who actively build products and solve real-world problems as teams.
 
 ---
 
-### 5. Main Platform Modules
+# 4. Product Scope
 
-The planned platform will contain the following major modules:
+The platform will be developed as a collection of connected modules.
 
-#### Workspace Management
+### Workspace
 
-Create workspaces, invite members, manage departments, configure permissions, and organize teams.
+* Workspace creation
+* Member invitations
+* Departments
+* Permissions
+* Workspace configuration
 
-#### Project Management
+### Projects
 
-Create projects, define priorities and deadlines, manage team members, milestones, files, documentation, and activity.
+* Project management
+* Priorities and deadlines
+* Milestones
+* Team members
+* Files
+* Documentation
+* Activity tracking
 
-#### Task Management
+### Tasks & Kanban
 
-Create and assign tasks with priorities, labels, due dates, attachments, checklists, story points, subtasks, dependencies, and recurring tasks.
+* Task creation and assignment
+* Labels and priorities
+* Due dates
+* Checklists
+* Story points
+* Subtasks
+* Dependencies
+* Recurring tasks
+* Bulk actions
+* Drag-and-drop Kanban boards
 
-#### Kanban Board
-
-Manage work through a customizable drag-and-drop workflow:
+Default workflow:
 
 **Backlog → To Do → In Progress → Code Review → Testing → Completed**
 
-#### Sprint Management
+### Sprints
 
-Create sprints, define goals and capacity, manage sprint backlogs, and monitor velocity, completion, blockers, and burndown.
+* Sprint planning
+* Sprint goals
+* Capacity
+* Sprint backlog
+* Velocity
+* Burndown
+* Completion tracking
+* Blocker tracking
 
-#### Documentation
+### Documentation
 
-Provide project-level collaborative documentation with rich text, Markdown, code blocks, tables, images, nested pages, search, and version history.
+* Rich-text editor
+* Markdown
+* Code blocks
+* Tables
+* Images
+* Nested pages
+* Search
+* Version history
 
-#### Communication
+### Communication
 
-Provide project channels, direct messages, threaded conversations, mentions, reactions, file sharing, voice communication, and live meetings.
+* Project channels
+* Direct messages
+* Threaded conversations
+* Mentions
+* Reactions
+* File sharing
+* Voice communication
+* Live meetings
 
-#### Meetings
+### Meetings
 
-Manage agendas, participants, notes, action items, calendar invitations, and meeting history.
+* Agendas
+* Participants
+* Notes
+* Action items
+* Calendar invitations
+* Meeting history
 
-#### File Management
+### Files
 
-Store and organize project files using Cloudinary, with folders, previews, downloads, and version history.
+* Images
+* PDFs
+* Videos
+* ZIP files
+* Documents
+* Folders
+* Preview
+* Download
+* Version history
 
-#### Time Tracking
+Storage will use **Cloudinary**.
 
-Track working time through timers, manual logs, and daily work logs, with reporting for managers.
+### Time Tracking
 
-#### Notifications
+* Start/stop timers
+* Manual time logging
+* Daily work logs
+* Productivity reports
+* Hours by project
+* Team utilization
 
-Notify users about important events such as assignments, completed tasks, deadlines, mentions, comments, file uploads, and sprint events.
+### Notifications
 
-#### Search
+Notifications for important events such as:
 
-Provide global search across projects, tasks, members, documents, messages, and files.
+* Task assignments
+* Task completion
+* Deadlines
+* Mentions
+* File uploads
+* Comments
+* Sprint events
 
-#### Analytics
+### Search
 
-Display project progress, sprint velocity, task completion, productivity, time logged, workload distribution, charts, and project health.
+Global search across:
+
+* Projects
+* Tasks
+* Members
+* Documents
+* Messages
+* Files
+
+### Analytics
+
+* Project progress
+* Sprint velocity
+* Task completion
+* Team productivity
+* Time logged
+* Workload distribution
+* Burnup/burndown
+* Project health
 
 ---
 
-### 6. AI Capabilities
+# 5. Users, Clients & AI
 
-Three AI capabilities have been selected for the initial product direction.
+## User Roles
 
-#### AI Project Risk Prediction
+### Workspace Owner
 
-Identify potential project risks, delays, or problematic areas from available project information.
+Responsible for workspace-level management.
 
-#### AI Workspace Chatbot
-
-Allow authorized users to ask questions about information contained within their workspace.
-
-The chatbot should respect the user's access permissions rather than exposing information simply because it exists in the database.
-
-#### AI Meeting Summarization
-
-Generate useful summaries from meetings and help identify important discussion points and action items.
-
-These capabilities are among the AI bonus options specified by the hackathon.
-
----
-
-### 7. User Roles
-
-The platform will use role-based permissions.
-
-**Workspace Owner**
-
-* Manage workspace
+* Create workspace
 * Invite members
 * Create projects
 * Assign roles
@@ -153,72 +213,130 @@ The platform will use role-based permissions.
 * View analytics
 * Manage integrations
 
-**Project Manager**
+### Project Manager
 
-* Create projects and sprints
+Responsible for project execution.
+
+* Create projects
+* Create sprints
 * Assign tasks
 * Approve work
 * Generate reports
 * Manage milestones
 
-**Team Member**
+### Team Member
 
-* Work on assigned tasks
+Responsible for day-to-day project work.
+
+* View assigned tasks
 * Update status
 * Upload files
 * Comment
-* Track time
+* Log time
 * Create subtasks
 
-**Client**
+### Client
+
+Clients have **visibility and communication access**, but cannot modify the project.
+
+They can:
 
 * View project progress
 * View documents
 * Observe development
 * Communicate with the team
 * Provide feedback
-* Approve deliverables
-* Cannot modify the project
+* Review deliverables
+* Approve work
 
-**Admin**
+### Admin
 
-* Platform-wide management of users, organizations, billing, permissions, audit logs, and system settings.
+Provides platform-wide administration.
 
-These roles and their core permissions are aligned with the hackathon requirements.
-
----
-
-### 8. Client Collaboration
-
-Clients are not intended to become project administrators.
-
-Their role is to **observe, communicate, provide feedback, review, and approve**.
-
-The intended workflow is:
-
-**Development → Client Visibility → Feedback → Team Changes → Client Review → Approval**
-
-This allows clients to remain involved throughout development while preventing unauthorized modification of the project.
+* Manage users
+* Manage organizations
+* Manage billing
+* Manage permissions
+* View audit logs
+* Manage system settings
 
 ---
 
-### 9. Product Development Methodology
+## Client Collaboration
+
+The client participates throughout the development process without receiving project-modification privileges.
+
+**Development → Client Review → Feedback → Changes → Review → Approval**
+
+This supports continuous client involvement while keeping project control with the development team.
+
+---
+
+## AI Capabilities
+
+The initial AI direction contains three features.
+
+### Project Risk Prediction
+
+Identify potential project risks, delays, or problematic areas using available project information.
+
+### Workspace AI Chatbot
+
+Allow authorized users to ask questions about information available within their workspace.
+
+The chatbot must respect the user's permissions and access scope.
+
+### AI Meeting Summarization
+
+Generate concise meeting summaries and identify important discussion points and action items.
+
+---
+
+# 6. Development Approach
 
 The project will follow an **iterative Prototyping Model**.
 
-The planned process is:
+### Development Cycle
 
-**Requirement Identification → MVP → Selected-User Testing → Feedback → Incremental Changes → Re-evaluation → Client Approval**
+**Requirements → MVP → Selected Users → Feedback → Incremental Changes → Re-evaluation → Client Approval**
 
-Instead of attempting to build the entire final product without validation, the team will create an MVP, allow selected users to interact with it, collect feedback, and continuously improve the product until the client approves the result.
+### Process
 
-This is **our chosen development methodology**. It is not a methodology mandated by the hackathon specification.
+1. **Identify Requirements**
+
+   * Understand the client's needs and define the initial scope.
+
+2. **Build the MVP**
+
+   * Develop the minimum functionality required to demonstrate the product concept.
+
+3. **Test With Selected Users**
+
+   * Allow selected users to use the MVP in realistic scenarios.
+
+4. **Collect Feedback**
+
+   * Identify usability problems, missing requirements, and improvement opportunities.
+
+5. **Make Incremental Changes**
+
+   * Improve the product based on collected feedback.
+
+6. **Repeat**
+
+   * Continue the prototype → feedback → refinement cycle.
+
+7. **Client Approval**
+
+   * Finalize the product when the client is satisfied with the result.
+
+This is the **chosen development methodology for this project**, not a requirement imposed by the hackathon.
 
 ---
 
-### 10. Technology Stack
+# 7. Technology & Security
 
-The currently selected technology stack is:
+## Technology Stack
 
 | Layer          | Technology                                            |
 | -------------- | ----------------------------------------------------- |
@@ -231,18 +349,37 @@ The currently selected technology stack is:
 | Storage        | Cloudinary                                            |
 | Deployment     | Vercel                                                |
 
-The selected technologies are compatible with the technology options listed in the hackathon specification.
+---
+
+## Authentication
+
+The planned authentication system includes:
+
+* Google OAuth
+* Email registration
+* Google login
+* Email login
+* Email verification
+* Password recovery
+* OTP or password-reset email
+* Secure sessions
+* Secure cookies
+* Refresh tokens
+* Multiple-device login
+* Logout from all devices
+
+Two-factor authentication is planned as an additional security feature for Workspace Owners and Admins.
 
 ---
 
-### 11. Security Direction
+## Security
 
-Security is considered a core part of the platform rather than an optional addition.
+Security will be treated as a core system requirement.
 
-The planned security scope includes:
+Planned protections include:
 
 * Password hashing
-* Role-Based Access Control
+* Role-Based Access Control (RBAC)
 * Organization-level permissions
 * Input validation
 * XSS protection
@@ -252,71 +389,56 @@ The planned security scope includes:
 * Audit logging
 * API authorization
 * Secure environment variables
-* Secure sessions
-* Refresh tokens
-* Email verification
-* Password recovery
-* Multi-device session management
-* Logout from all devices
-* Optional two-factor authentication for Owners and Admins
-
-## These requirements correspond closely to the authentication and security requirements in the hackathon specification.
-
-### 12. Current Architecture Status
-
-The detailed technical architecture has **not yet been finalized**.
-
-The following areas remain to be designed:
-
-* System architecture
-* Frontend-backend communication
-* API architecture
-* MongoDB schema
-* Real-time communication architecture
-* AI architecture
-* Detailed authorization architecture
-
-These should be designed before substantial implementation begins.
 
 ---
 
-### 13. Current Project Status
+# 8. Current Status & Next Steps
 
-At this stage, the project has established its:
+## Defined
 
-* Problem definition
-* Product vision
-* Target users
-* Core modules
-* User roles
-* Authentication requirements
-* Security requirements
-* AI direction
-* Technology stack
-* Client workflow
-* Development methodology
+* [x] Problem statement
+* [x] Product vision
+* [x] Target users
+* [x] Core modules
+* [x] User roles
+* [x] Authentication requirements
+* [x] Security requirements
+* [x] AI features
+* [x] Technology stack
+* [x] Client workflow
+* [x] Development methodology
 
-The technical architecture and database design are the next major design stages.
+## Next Design Phase
 
-The project will then be developed incrementally, with implementation status clearly separated into:
+The following technical areas still need to be designed:
+
+* [ ] System architecture
+* [ ] Frontend-backend communication
+* [ ] API architecture
+* [ ] MongoDB schema
+* [ ] Real-time communication architecture
+* [ ] AI architecture
+* [ ] Detailed authorization architecture
+
+## Development Status
+
+As implementation begins, every feature will be classified as:
 
 * **Implemented**
 * **In Progress**
 * **Planned**
 * **Bonus**
 
-This prevents the documentation from claiming functionality that has not actually been built.
+This keeps the documentation synchronized with the actual state of the project rather than claiming features that exist only in our collective imagination.
 
 ---
 
-### 14. Overall Vision
+# Final Vision
 
-The long-term vision is to create a platform where a team can move from:
+The platform aims to connect the complete product-development workflow:
 
 **Requirement → Prototype → Development → Collaboration → Documentation → Testing → Client Feedback → Delivery → Performance Tracking**
 
-while maintaining the relevant project context in one environment.
+The objective is not simply to build another project-management tool.
 
-The goal is not simply to create another project-management application.
-
-The goal is to create a **unified product-development workspace** that connects the people, information, communication, tasks, documentation, files, meetings, clients, analytics, and AI capabilities involved in building a product.
+The objective is to create a **unified product-development workspace** where teams can build products, maintain project context, collaborate with clients, and manage their work without depending on a collection of disconnected platforms.
