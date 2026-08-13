@@ -1,6 +1,43 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const email = (formData.get("email") || "").toString().trim();
+    const password = (formData.get("password") || "").toString();
+
+    if (!email || !password) {
+      setError("Please provide both email and password.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      // TODO: Replace this simulated auth with a real API call
+      await new Promise((res) => setTimeout(res, 600));
+
+      // On success navigate to dashboard
+      router.push("/dashboard");
+    } catch (err) {
+      setError("Sign in failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gray-50">
       <div className="grid min-h-screen lg:grid-cols-2">
@@ -71,6 +108,7 @@ export default function LoginPage() {
             <button
               type="button"
               className="mt-8 flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-800 transition hover:bg-gray-50"
+              onClick={() => alert("Google sign-in not implemented yet.")}
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-300 text-xs font-bold">
                 G
@@ -91,7 +129,7 @@ export default function LoginPage() {
             </div>
 
             {/* Form */}
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="email"
@@ -135,12 +173,21 @@ export default function LoginPage() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="h-12 w-full rounded-xl bg-gray-950 text-sm font-semibold text-white transition hover:bg-gray-800"
-              >
-                Sign in
-              </button>
+              <div>
+                {error && (
+                  <p className="mb-2 text-sm text-red-600" role="alert">
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="h-12 w-full rounded-xl bg-gray-950 text-sm font-semibold text-white transition hover:bg-gray-800 disabled:opacity-60"
+                >
+                  {loading ? "Signing in..." : "Sign in"}
+                </button>
+              </div>
             </form>
 
             {/* Signup */}
