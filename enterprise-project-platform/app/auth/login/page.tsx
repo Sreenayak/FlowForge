@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -108,7 +109,7 @@ export default function LoginPage() {
             <button
               type="button"
               className="mt-8 flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-800 transition hover:bg-gray-50"
-              onClick={() => alert("Google sign-in not implemented yet.")}
+              onClick={() => signIn('google')}
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-300 text-xs font-bold">
                 G
