@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
+/* =========================================
+   FLOWFORGE GLOBAL THEME
+   ========================================= */
+
 :root {
-  --background: #ffffff;
+  --background: #fff4ea;
   --foreground: #111827;
+
+  --peach-50: #fff9f5;
+  --peach-100: #fff4ea;
+  --peach-200: #ffe7d6;
+  --peach-300: #ffd3b5;
+  --peach-400: #ffb07c;
+  --peach-500: #f97316;
+  --peach-600: #ea580c;
+
+  --card: #ffffff;
+  --card-border: #eadfd7;
+
+  --muted: #6b7280;
 }
 
 * {
@@ -10,12 +27,210 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  min-height: 100%;
+  background: var(--background);
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
-  background: var(--background);
+
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* =========================================
+   GLOBAL PAGE BACKGROUND
+   ========================================= */
+
+/*
+   These rules make the actual application pages
+   peach even when a page currently uses
+   bg-white or bg-gray-50.
+*/
+
+main {
+  background-color: var(--background);
+}
+
+main.min-h-screen {
+  background-color: var(--background) !important;
+}
+
+.min-h-screen.bg-white {
+  background-color: var(--background) !important;
+}
+
+.min-h-screen.bg-gray-50 {
+  background-color: var(--background) !important;
+}
+
+.min-h-screen.bg-slate-50 {
+  background-color: var(--background) !important;
+}
+
+/* Common full-page containers */
+.page-background {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+/* =========================================
+   WHITE CARDS
+   ========================================= */
+
+/*
+   Cards stay white.
+   This is important because the peach background
+   needs contrast.
+*/
+
+.flowforge-card {
+  background-color: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+}
+
+/* =========================================
+   BORDERS
+   ========================================= */
+
+.flowforge-border {
+  border-color: var(--card-border);
+}
+
+/* =========================================
+   PEACH BUTTON
+   ========================================= */
+
+.flowforge-button {
+  background-color: var(--peach-500);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.flowforge-button:hover {
+  background-color: var(--peach-600);
+}
+
+.flowforge-button:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   PEACH SECONDARY BUTTON
+   ========================================= */
+
+.flowforge-button-secondary {
+  background-color: var(--peach-100);
+  color: var(--peach-600);
+  border: 1px solid var(--peach-200);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.flowforge-button-secondary:hover {
+  background-color: var(--peach-200);
+  border-color: var(--peach-300);
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.flowforge-nav-active {
+  background-color: var(--peach-200);
+  color: var(--peach-600);
+}
+
+.flowforge-nav-item {
+  color: #4b5563;
+  border-radius: 10px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.flowforge-nav-item:hover {
+  background-color: var(--peach-100);
+  color: var(--peach-600);
+}
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+input,
+textarea,
+select {
+  border-color: var(--card-border);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--peach-400);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--peach-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--peach-300);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--peach-400);
+}
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+  background-color: var(--peach-300);
+  color: #111827;
 }
