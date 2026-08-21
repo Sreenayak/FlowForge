@@ -1,3 +1,31 @@
+# FlowForge
+
+The live application is the Next.js project inside [`enterprise-project-platform`](enterprise-project-platform/).
+
+## Deploy The Application
+
+This is not a plain HTML project, so do not open the repository with Live Server or deploy it as GitHub Pages. GitHub Pages only serves static files and cannot run the NextAuth, Google OAuth, or password-reset API routes.
+
+For a GitHub-connected deployment:
+
+1. Import `Sreenayak/FlowForge` into Vercel.
+2. Set **Root Directory** to `enterprise-project-platform`.
+3. Leave the framework as **Next.js** and use the default build command.
+4. Add the environment variables from `enterprise-project-platform/.env.example`.
+5. Add the Vercel URL to Google OAuth as `https://YOUR-DOMAIN/api/auth/callback/google`.
+
+Run locally from the application directory:
+
+```powershell
+cd enterprise-project-platform
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+---
+
 # Enterprise Project Management & Team Collaboration
 
 > A unified platform for managing, building, documenting, communicating, and delivering software products with a team from a single workspace.

@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the FlowForge Next.js application. The repository root is one level above this directory, so deployment services must use `enterprise-project-platform` as the root directory.
+
+## Deployment
+
+Use Vercel or another Node.js-compatible host for the full application. Set the project root to this directory and add the variables in `.env.example`.
+
+GitHub Pages and Live Server are not supported for the full application because they cannot execute the NextAuth, Google OAuth, and password-reset API routes.
 
 ## Getting Started
 
