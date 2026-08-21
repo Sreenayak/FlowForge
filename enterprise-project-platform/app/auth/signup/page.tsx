@@ -17,6 +17,7 @@ export default function SignupPage() {
     const result = await signIn("google", {
       callbackUrl: "/auth/onboarding/create-workspace",
       redirect: false,
+      prompt: "select_account",
     });
 
     if (result?.error) {

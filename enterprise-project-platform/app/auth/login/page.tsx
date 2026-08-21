@@ -17,6 +17,7 @@ export default function LoginPage() {
     const result = await signIn("google", {
       callbackUrl: "/dashboard",
       redirect: false,
+      prompt: "select_account",
     });
 
     if (result?.error) {
@@ -187,6 +188,7 @@ export default function LoginPage() {
                   <button
                     type="button"
                     className="text-xs font-medium text-gray-500 hover:text-gray-950"
+                    onClick={() => router.push("/auth/forgot-password")}
                   >
                     Forgot password?
                   </button>
