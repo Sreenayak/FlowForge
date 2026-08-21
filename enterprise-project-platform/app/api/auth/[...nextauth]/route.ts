@@ -1,24 +1,24 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-  console.warn("GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are not set.");
-}
+const googleCredentials =
+  process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET;
 
 export const authOptions = {
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-    }),
-  ],
+  providers: googleCredentials
+    ? [
+        GoogleProvider({
+          clientId: process.env.GOOGLE_CLIENT_ID!,
+          clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        }),
+      ]
+    : [],
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    error: "/auth/login",
+  },
   session: {
     strategy: "jwt",
-  },
-  callbacks: {
-    async session({ session, token }) {
-      return session;
-    },
   },
 };
 

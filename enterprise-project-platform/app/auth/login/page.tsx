@@ -3,11 +3,38 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 export default function LoginPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const handleGoogleSignIn = async () => {
+    setError(null);
+    setLoading(true);
+
+    const result = await signIn("google", {
+      callbackUrl: "/dashboard",
+      redirect: false,
+    });
+
+    if (result?.error) {
+      setError(
+        result.error === "Configuration"
+          ? "Google sign-in is not configured. Add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET to .env.local."
+          : "Google sign-in failed. Please try again."
+      );
+      setLoading(false);
+      return;
+    }
+
+    if (result?.url) {
+      router.push(result.url);
+    }
+
+    setLoading(false);
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -107,8 +134,9 @@ export default function LoginPage() {
             {/* Google */}
             <button
               type="button"
-              className="mt-8 flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-800 transition hover:bg-gray-50"
-              onClick={() => alert("Google Sign-In coming soon")}
+              disabled={loading}
+              className="mt-8 flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-800 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+              onClick={handleGoogleSignIn}
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-300 text-xs font-bold">
                 G

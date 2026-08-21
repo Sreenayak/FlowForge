@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Logo from "./logo";
 import { useAuth } from "@/lib/auth/auth-context";
 
@@ -13,6 +14,7 @@ export default function AppHeader({
   title,
   showBack = false,
 }: AppHeaderProps) {
+  const router = useRouter();
   const {
     user,
     isLoading,
@@ -20,6 +22,11 @@ export default function AppHeader({
     logout,
     hasPermission,
   } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    router.replace("/auth/login");
+  };
 
   if (isLoading) {
     return (
@@ -76,7 +83,7 @@ export default function AppHeader({
 
               <button
                 type="button"
-                onClick={logout}
+                onClick={handleLogout}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-[#fff4ea] hover:text-[#ea580c]"
               >
                 Logout

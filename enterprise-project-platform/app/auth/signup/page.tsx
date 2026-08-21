@@ -2,10 +2,39 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { signIn } from "next-auth/react";
 
 export default function SignupPage() {
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleGoogleSignUp = async () => {
+    setError(null);
+    setLoading(true);
+
+    const result = await signIn("google", {
+      callbackUrl: "/auth/onboarding/create-workspace",
+      redirect: false,
+    });
+
+    if (result?.error) {
+      setError(
+        result.error === "Configuration"
+          ? "Google sign-in is not configured. Add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET to .env.local."
+          : "Google sign-in failed. Please try again."
+      );
+      setLoading(false);
+      return;
+    }
+
+    if (result?.url) {
+      router.push(result.url);
+    }
+
+    setLoading(false);
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -128,8 +157,9 @@ export default function SignupPage() {
             {/* Google Signup */}
             <button
               type="button"
-              className="mt-8 flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-800 transition hover:bg-gray-50"
-              onClick={() => signIn('google')}
+              disabled={loading}
+              className="mt-8 flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-800 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+              onClick={handleGoogleSignUp}
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gray-300 text-xs font-bold">
                 G
@@ -137,6 +167,12 @@ export default function SignupPage() {
 
               Continue with Google
             </button>
+
+            {error && (
+              <p className="mt-4 text-sm text-red-600" role="alert">
+                {error}
+              </p>
+            )}
 
             {/* Divider */}
             <div className="my-7 flex items-center gap-4">
