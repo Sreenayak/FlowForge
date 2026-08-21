@@ -118,7 +118,7 @@ export default function DashboardPage() {
 
           {/* Tasks */}
           <Link
-            href="/tasks"
+            href="/projects/demo/tasks"
             className="mb-1 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -132,7 +132,7 @@ export default function DashboardPage() {
 
           {/* Sprints */}
           <Link
-            href="/sprints"
+            href="/projects/demo/milestones"
             className="mb-1 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -146,7 +146,7 @@ export default function DashboardPage() {
 
           {/* Calendar */}
           <Link
-            href="/calendar"
+            href="/projects/demo/activity"
             className="mb-7 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -166,7 +166,7 @@ export default function DashboardPage() {
           </p>
 
           <Link
-            href="/wiki"
+            href="/projects/demo/files"
             className="mb-1 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -179,7 +179,7 @@ export default function DashboardPage() {
           </Link>
 
           <Link
-            href="/files"
+            href="/projects/demo/files"
             className="mb-1 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -192,7 +192,7 @@ export default function DashboardPage() {
           </Link>
 
           <Link
-            href="/chat"
+            href="/projects/demo/team"
             className="mb-1 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -205,7 +205,7 @@ export default function DashboardPage() {
           </Link>
 
           <Link
-            href="/meetings"
+            href="/projects/demo/activity"
             className="mb-1 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -218,7 +218,7 @@ export default function DashboardPage() {
           </Link>
 
           <Link
-            href="/time-tracking"
+            href="/projects/demo/activity"
             className="mb-7 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -238,7 +238,7 @@ export default function DashboardPage() {
           </p>
 
           <Link
-            href="/analytics"
+            href="/projects/demo/activity"
             className="mb-7 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-950"
           >
             <span className="flex w-5 justify-center">
@@ -663,7 +663,7 @@ export default function DashboardPage() {
 
 
                 <Link
-                  href="/tasks"
+                  href="/projects/demo/tasks"
                   className="flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-gray-300 hover:bg-gray-50"
                 >
                   <div>
@@ -683,7 +683,7 @@ export default function DashboardPage() {
 
 
                 <Link
-                  href="/meetings"
+                  href="/projects/demo/activity"
                   className="flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-gray-300 hover:bg-gray-50"
                 >
                   <div>
@@ -703,7 +703,7 @@ export default function DashboardPage() {
 
 
                 <Link
-                  href="/analytics"
+                  href="/projects/demo/activity"
                   className="flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-gray-300 hover:bg-gray-50"
                 >
                   <div>

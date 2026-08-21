@@ -22,7 +22,7 @@ export default function Hero() {
           {/* Actions */}
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="/signup"
+              href="/auth/signup"
               className="w-full rounded-xl bg-gray-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-gray-800 sm:w-auto"
             >
               Get started
